@@ -24,7 +24,7 @@
 # breakpoint system works
 # Task: get the user's name with input() and print out Hello <name>
 print("start of part 0") # set breakpoint here
-# your code here
+print("Hello", input("What's your name? "))
 
 
 print("end of 0") # set breakpoint here 
@@ -285,7 +285,7 @@ filler = "..."
 
 
 print("end of 4") # set breakpoint here 
-'''
+"""
 
 
 
@@ -354,4 +354,4 @@ print(abbr("test", "", 0))
 print(abbr("test", "", 999))
 print(abbr("A very long description", "....................................", 999))
 print(abbr("A very long description", "....................................", 0))
-'''
+"""

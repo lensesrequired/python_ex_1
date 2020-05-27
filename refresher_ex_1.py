@@ -294,13 +294,30 @@ for w in words:
 # to total_width chars and uses the string filler in between them. Again, make sure the
 # result would not be longer than s!
 # call your function a couple of times with different parameters and also test edge cases
-print("start of part 4") # set breakpoint here
-s = "A very long description" # a long string
+print("start of part 4")  # set breakpoint here
+s = "A very long description"  # a long string
 filler = "..."
-# your code here
 
 
-print("end of 4") # set breakpoint here 
+def abbr(str, fill="...", n=15):
+    if (n == 0):
+        return fill
+    if (len(str) < n * 2 + len(fill)):  # Check if the string is shorter without the filler
+        return s
+    return str[0:n] + fill + str[-n:]  # Concat the first n characters, fill, and last n characters together
+
+
+for i in range(5, 16):  # loop through the range 5 to 15 to run abbr on s
+    print(abbr(s, "...", i))
+
+print()
+print("Some tests!")
+print(abbr(""))
+print(abbr("A very very very very very very long description", "***"))
+print(abbr("Hello", "***", 0))
+print(abbr("Hello World", "", 1))
+
+print("end of 4")  # set breakpoint here
 """
 
 

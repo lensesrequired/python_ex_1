@@ -155,11 +155,18 @@ print(newL) # [0, 2, 3, [5, 6], 8, 10]
 # Python is an interpreted, high-level, general-purpose programming language
 #  Created by Guido van Rossum and first released in 1991, Python ...
 #  Its language constructs and object-oriented approach aim to help programmers ...
-print("start of part 2") # set breakpoint here
-s = "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects."
-# your code here
+print("start of part 2")  # set breakpoint here
+s = "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and " \
+    "first released in 1991, Python's design philosophy emphasizes code readability with its notable use of " \
+    "significant whitespace. Its language constructs and object-oriented approach aim to help programmers write " \
+    "clear, logical code for small and large-scale projects."
 
-print("end of 2") # set breakpoint here 
+sentences = s.split('.')  # Break sentences up by .
+print('There are', len(sentences), 'sentences')  # Print length of the array of sentences
+for sentence in sentences:  # Loop through them and print!
+    print(sentence)
+
+print("end of 2")  # set breakpoint here
 '''
 
 
@@ -207,11 +214,16 @@ for e in sentence_list:
 # GENERAL-PURPOSE
 # programming
 # LANGUAGE
-print("start of part 3") # set breakpoint here
-# your code here
+print("start of part 3")  # set breakpoint here
+words = s.split()
+for index, word in enumerate(words):  # enumerate the list to get the index we're currently on
+    word = word.strip(".,")  # remove punctuation from either end of a word but leave it if it's in the middle
+    if (index % 2 == 0):  # if it's an even index, print as is
+        print(word)
+    else:  # otherwise, make it Uppercase
+        print(word.upper())
 
-
-print("end of 3") # set breakpoint here 
+print("end of 3")  # set breakpoint here
 '''
 
 

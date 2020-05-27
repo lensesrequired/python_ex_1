@@ -23,11 +23,10 @@
 # This is just a simple example to demonstrate how the start and end
 # breakpoint system works
 # Task: get the user's name with input() and print out Hello <name>
-print("start of part 0") # set breakpoint here
+print("start of part 0")  # set breakpoint here
 print("Hello", input("What's your name? "))
 
-
-print("end of 0") # set breakpoint here 
+print("end of 0")  # set breakpoint here
 '''
 
 
@@ -98,13 +97,18 @@ print("Hello", name)
 # You need to do something similar but end up with [0,2,3,[5,6],8,10] instead. One way to work 
 # through this is to break the process down in small steps, store result of each step in a new variable
 # and use those variables in the next step
-print("start of part 1") # set breakpoint here
-L = [0, [], [1,2,3,4], [[5],[6,7]], [8,9,10]]
+print("start of part 1")  # set breakpoint here
+L = [0, [], [1, 2, 3, 4], [[5], [6, 7]], [8, 9, 10]]
 print(L)
-# your code
-
-
-print("end of 1") # set breakpoint here 
+newList = [  # Packing everything up into a list
+    L[0],  # Grab the 0
+    *L[2][1:3],  # Use unpacking/splatting to dump the elements 2 and 3 out
+    [L[3][0][0], L[3][1][0]],  # Create a list within the new list with 5 and 6
+    L[4][0],  # Grab the 8
+    L[4][2]  # Grab the 10
+]
+print("Result", newList)
+print("end of 1")  # set breakpoint here
 '''
 
 
